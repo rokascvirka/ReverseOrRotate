@@ -4,13 +4,13 @@
     {
         static void Main(string[] args)
         {
-             string text = "563000655734469485";
-            int chunkSize = 4;
+             string text = "123456987654";
+            int chunkSize = 6;
             List<string> temporaryList = new List<string>();
             var processedText = "";
 
 
-            while (text.Length > chunkSize)
+            while (text.Length >= chunkSize)
             {
                 temporaryList.Add(text.Substring(0, chunkSize));
                 text = text.Substring(chunkSize);
