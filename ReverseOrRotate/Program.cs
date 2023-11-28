@@ -7,7 +7,7 @@
             string text = "123456987654";
             int chunkSize = 6;
             List<string> temporaryList = new List<string>();
-            var processedText = "";
+            var answer = "";
 
             while (text.Length >= chunkSize)
             {
@@ -22,31 +22,30 @@
             foreach (string chunkText in temporaryList)
             {
                 Console.WriteLine(chunkText);
-                var processed = TextProcessor(chunkText);
-                processedText += processed;
+                var processedText = TextProcessor(chunkText);
+                answer += processedText;
             }
 
-            Console.WriteLine(processedText);
+            Console.WriteLine(answer);
             
         }
 
         private static string TextProcessor(string text)
         {
-            string newText = "";
+            string processedText = "";
             if(IsSumOfCubesDivisibleByTwo(text))
             {
                 var charArray = text.ToCharArray();
                 Array.Reverse(charArray);
                 var reversed = new string(charArray);
-                newText += reversed;
+                processedText += reversed;
             }
             else
             {
-                
-                newText += text.Substring(1) + text[0];
+                processedText += text.Substring(1) + text[0];
             }
 
-            return newText;
+            return processedText;
         }
 
         private static bool IsSumOfCubesDivisibleByTwo(string text)
