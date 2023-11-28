@@ -4,11 +4,10 @@
     {
         static void Main(string[] args)
         {
-             string text = "123456987654";
+            string text = "123456987654";
             int chunkSize = 6;
             List<string> temporaryList = new List<string>();
             var processedText = "";
-
 
             while (text.Length >= chunkSize)
             {
@@ -18,9 +17,7 @@
                 {
                     break;
                 }
-            }
-
-            
+            }        
 
             foreach (string chunkText in temporaryList)
             {
@@ -32,6 +29,7 @@
             Console.WriteLine(processedText);
             
         }
+
         private static string TextProcessor(string text)
         {
             string newText = "";
@@ -50,6 +48,7 @@
 
             return newText;
         }
+
         private static bool IsSumOfCubesDivisibleByTwo(string text)
         {
             var sum = 0;
@@ -60,6 +59,7 @@
             }
             return sum % 2 == 0;
         }
+
 
         private static int IncreaseByCube(string number)
         {
