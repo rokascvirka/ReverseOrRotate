@@ -9,7 +9,9 @@
             List<string> temporaryList = new List<string>();
             var answer = "";
 
-            while (text.Length >= chunkSize)
+            if (chunkSize <= 0 || text.Length == 0) Console.WriteLine( "Chunk was 0 or string was empty");
+
+                while (text.Length >= chunkSize)
             {
                 temporaryList.Add(text.Substring(0, chunkSize));
                 text = text.Substring(chunkSize);
